@@ -16,7 +16,7 @@ Entonces se mete con el comando:
 
 Una línea con la anterior expresión y la ruta del script; en mi caso:
 
-`30 17 * * * /home/javier/.bin/SCRIPTS/covid/download_daily_pdf.sh`
+`35 18 * * * /home/javier/.bin/SCRIPTS/covid/download_daily_pdf.sh`
 
 Se puede comprobar que se ha añadido con el comando:
 
