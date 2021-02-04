@@ -22,3 +22,15 @@ Se puede comprobar que se ha aÃ±adido con el comando:
 
 `crontab -l`
 
+De momento he dejado el crontab asÃ:
+
+`## Antes de cambiar el git, habia que hacer esto --> indicaba que estaba mal el cron
+#09 20 * * * cd /home/javier/.bin/SCRIPTS/covid && /home/javier/.bin/SCRIPTS/covid/download_daily_pdf.sh
+## Tras cambiar el cron, esto ya funcina; he estado jugando con las horas
+# 21 20 * * * /home/javier/.bin/SCRIPTS/covid/download_daily_pdf.sh
+## Ahora voy a cambiar el cron para que se ejecute mas veces porque si
+0 */8 * * * /home/javier/.bin/SCRIPTS/covid/download_daily_pdf.sh`
+
+Esto se puede ver de forma guay con el siguiente comando:
+
+`sudo cat /var/spool/cron/crontabs/javier |tail -n 6 >> Readme.adoc`
