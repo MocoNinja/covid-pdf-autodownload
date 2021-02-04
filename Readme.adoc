@@ -18,7 +18,7 @@ Una línea con la anterior expresión y la ruta del script; en mi caso:
 
 `35 18 * * * /home/javier/.bin/SCRIPTS/covid/download_daily_pdf.sh`
 
-Se puede comprobar que se ha aÃ±adido con el comando:
+Se puede comprobar que se ha añadido con el comando:
 
 `crontab -l`
 
