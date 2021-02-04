@@ -1,7 +1,7 @@
 = Bajar PDFs del ministerio sobre el COVID
 
-Este script está pensado para que, mediante un CRON, se tenga la última actualización en forma de PDF.
-Es muy simple, así que no detecta saltos ni pérdidas, simplemente checkea si existe en el momento de ejecución un informe con un número de sequencia superior en una unidad al que guarda en un fichero.dat.
+Este script está pensado para que, mediante un CRON, se tenga la Última actualización en forma de PDF.
+Es muy simple, así que no detecta saltos ni pÃ©rdidas, simplemente checkea si existe en el momento de ejecución un informe con un número de sequencia superior en una unidad al que guarda en un fichero.dat.
 En caso afirmativo, actualiza dicho fichero y baja el fichero. En caso de no encontrar la url con la sequencia incrementada, no hace nada.
 
 == Cron
@@ -18,19 +18,21 @@ Una línea con la anterior expresión y la ruta del script; en mi caso:
 
 `35 18 * * * /home/javier/.bin/SCRIPTS/covid/download_daily_pdf.sh`
 
-Se puede comprobar que se ha añadido con el comando:
+Se puede comprobar que se ha aÃ±adido con el comando:
 
 `crontab -l`
 
-De momento he dejado el crontab as�:
+De momento he dejado el crontab así:
 
-`## Antes de cambiar el git, habia que hacer esto --> indicaba que estaba mal el cron
+[source,bash]
+----
+## Antes de cambiar el git, habia que hacer esto --> indicaba que estaba mal el cron
 #09 20 * * * cd /home/javier/.bin/SCRIPTS/covid && /home/javier/.bin/SCRIPTS/covid/download_daily_pdf.sh
 ## Tras cambiar el cron, esto ya funcina; he estado jugando con las horas
 # 21 20 * * * /home/javier/.bin/SCRIPTS/covid/download_daily_pdf.sh
 ## Ahora voy a cambiar el cron para que se ejecute mas veces porque si
-0 */8 * * * /home/javier/.bin/SCRIPTS/covid/download_daily_pdf.sh`
+0 */8 * * * /home/javier/.bin/SCRIPTS/covid/download_daily_pdf.sh
+----
 
 Esto se puede ver de forma guay con el siguiente comando:
-
 `sudo cat /var/spool/cron/crontabs/javier |tail -n 6 >> Readme.adoc`
