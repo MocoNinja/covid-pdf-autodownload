@@ -21,6 +21,7 @@ OUT="$SCRIPTPATH/data/"
 ## Obtenemos última sequencia
 echo "$(date +%F--%T)---Actualizando sequencia..." >> $LOGFILE
 
+## No olvidar el flag de -C para que git estéel repositorio correcto; como he hecho con el resto de las cosas, vamos :)
 git -C $SCRIPTPATH pull origin master --quiet
 
 ## Nombre del fichero a bajar -> sacamos el día y creamos el nombre de ese día
