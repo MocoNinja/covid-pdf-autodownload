@@ -1,7 +1,7 @@
 = Bajar PDFs del ministerio sobre el COVID
 
 Este script está pensado para que, mediante un CRON, se tenga la Última actualización en forma de PDF.
-Es muy simple, así que no detecta saltos ni pÃ©rdidas, simplemente checkea si existe en el momento de ejecución un informe con un número de sequencia superior en una unidad al que guarda en un fichero.dat.
+Es muy simple, así que no detecta saltos ni pérdidas, simplemente checkea si existe en el momento de ejecución un informe con un número de sequencia superior en una unidad al que guarda en un fichero.dat.
 En caso afirmativo, actualiza dicho fichero y baja el fichero. En caso de no encontrar la url con la sequencia incrementada, no hace nada.
 
 == Cron
