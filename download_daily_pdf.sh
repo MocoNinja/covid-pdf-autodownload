@@ -57,6 +57,6 @@ out=$OUT$filename
 curl $url -s -o $out && echo "$(date +%F--%T)---Se ha descargado correctamente: $out!" >> $LOGFILE
 
 echo "$(date +%F--%T)---Commiteando .dat y actualizando git..." >> $LOGFILE
-git -C $SCRIPTPATH add . && git -C SCRIPTPATH commit -s -q -m "AUTOCOMMIT-UPDATE_SEQ_TO_$new_sequence-$(date +%F%T)" && git -C $SCRIPTPATH push -u origin master -q
+git -C $SCRIPTPATH add . && git -C $SCRIPTPATH commit -s -q -m "AUTOCOMMIT-UPDATE_SEQ_TO_$new_sequence-$(date +%F%T)" && git -C $SCRIPTPATH push -u origin master -q
 echo "$(date +%F--%T)---Acabado!" >> $LOGFILE
 
