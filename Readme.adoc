@@ -14,25 +14,8 @@ Entonces se mete con el comando:
 
 `crontab -e`
 
-Una línea con la anterior expresión y la ruta del script; en mi caso:
-
-`35 18 * * * /home/javier/.bin/SCRIPTS/covid/download_daily_pdf.sh`
-
-Se puede comprobar que se ha añadido con el comando:
-
 `crontab -l`
 
-De momento he dejado el crontab así:
+Yo me lo dejo para que lo tire cada 8 horas:
 
-[source,bash]
-----
-## Antes de cambiar el git, habia que hacer esto --> indicaba que estaba mal el cron
-#09 20 * * * cd /home/javier/.bin/SCRIPTS/covid && /home/javier/.bin/SCRIPTS/covid/download_daily_pdf.sh
-## Tras cambiar el cron, esto ya funcina; he estado jugando con las horas
-# 21 20 * * * /home/javier/.bin/SCRIPTS/covid/download_daily_pdf.sh
-## Ahora voy a cambiar el cron para que se ejecute mas veces porque si
-0 */8 * * * /home/javier/.bin/SCRIPTS/covid/download_daily_pdf.sh
-----
-
-Esto se puede ver de forma guay con el siguiente comando:
-`sudo cat /var/spool/cron/crontabs/javier |tail -n 6 >> Readme.adoc`
+`0 */8 * * * /home/javierito/.bin/scripts/covid-pdf-autodownload/download_daily_pdf.sh`
