@@ -10,7 +10,8 @@ LOGFILE="$SCRIPTPATH/log.log"
 
 ## URL BASE
 URL="https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/documentos/"
-URL_CHECK_NEW="https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/situacionActual.htm"
+#URL_CHECK_NEW="https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/situacionActual.htm"
+URL_CHECK_NEW="https://www.sanidad.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/situacionActual.htm"
 
 ## Fichero de BBDD
 FILE="$SCRIPTPATH/status.dat"
@@ -36,6 +37,8 @@ echo "$(date +%F--%T)---Comprobando si existe documento $new_sequence" >> $LOGFI
 href_to_grep='href="documentos/Actualizacion_'$new_sequence'_COVID-19.pdf"'
 
 found_document=`curl -s $URL_CHECK_NEW | grep $href_to_grep`
+
+echo "URL --- $URL_CHECK_NEW --- GREP --- $href_to_grep"
 
 # Si no está el fichero que deberíamos tener, NO actualizamos nuestro .dat
 [ -z "$found_document" ] && exit 1
