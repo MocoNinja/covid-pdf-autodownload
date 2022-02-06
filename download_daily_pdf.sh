@@ -38,8 +38,6 @@ href_to_grep='href="documentos/Actualizacion_'$new_sequence'_COVID-19.pdf"'
 
 found_document=`curl -s $URL_CHECK_NEW | grep $href_to_grep`
 
-echo "URL --- $URL_CHECK_NEW --- GREP --- $href_to_grep"
-
 # Si no está el fichero que deberíamos tener, NO actualizamos nuestro .dat
 [ -z "$found_document" ] && exit 1
 echo "$(date +%F--%T)---Hay documento!" >> $LOGFILE
