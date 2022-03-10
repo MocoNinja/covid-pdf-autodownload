@@ -19,3 +19,12 @@ Entonces se mete con el comando:
 Yo me lo dejo para que lo tire cada 8 horas:
 
 `0 */8 * * * /home/javierito/.bin/scripts/covid-pdf-autodownload/download_daily_pdf.sh`
+
+==  Ficheros pochos
+
+Cuando se baja mal suele ocupar un tamaño fijo:
+
+. Fichero pocho `find . -type f -size 19k -exec rm {} \;`
+. Fichero mal bajado `find . -type f -size 0k -exec rm {} \;`
+.. También creo que acepta `--empty` en vez del tamaño a 0
+
