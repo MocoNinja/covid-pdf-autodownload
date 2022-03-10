@@ -9,9 +9,10 @@ SCRIPTPATH=$(dirname "$SCRIPT")
 LOGFILE="$SCRIPTPATH/log.log"
 
 ## URL BASE
-URL="https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/documentos/"
+#URL="https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/documentos/"
 #URL_CHECK_NEW="https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/situacionActual.htm"
 URL_CHECK_NEW="https://www.sanidad.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/situacionActual.htm"
+URL_DOWNLOAD_NEW="https://www.sanidad.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/documentos/"
 
 ## Fichero de BBDD
 FILE="$SCRIPTPATH/status.dat"
@@ -50,7 +51,7 @@ echo "$(date +%F--%T)---Actualizada sequencia en el .dat!" >> $LOGFILE
 filename="Actualizacion_"$new_sequence"_COVID-19.pdf"
 
 ## Definimos la url del fichero a partir del nombre del fichero del día y de la URL base
-url=$URL$filename
+url=$URL_DOWNLOAD_NEW$filename
 
 ## Definimos el filepath a partir del directorio de salida y el fichero del día
 out=$OUT$filename
